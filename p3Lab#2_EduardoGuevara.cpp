@@ -1,8 +1,9 @@
 #include <iostream>
-#include <stdlib.h>
+	#include <stdlib.h>
 #include <time.h>
 #include <math.h>
 using namespace std;
+#define PI 3.14159265
 
 //Evalua si el numero ingresado por el usuario es triangular o no
 bool numTriangular(int);
@@ -109,25 +110,37 @@ int numTAnterior(int t){
 }
 
 void Calculos() {
-	int lado1;
-	int lado2;
-	int lado3;
-	double ang12;
-	double ang13;
-	double ang23;
+	double a;
+	double b;
+	double c;
+	double angC;
+	double angB;
+	double angA;
 	double area;
-	cout<<"Ingrese la medida del primer lado: "<<endl;
-	cin>>lado1;
-	cout<<"Ingrese la medida del segundo lado: "<<endl;
-	cin>>lado2;
-	cout<<"Ingrese la medida del tercer lado: "<<endl;
-	cin>>lado3;
-	ang12 = acos(((lado3^2)-(lado1^2)-(lado2^2))/((-2)*lado1*lado3));
-	cout<<"Angulo gangma: "<<ang12<<endl;
-	
-	ang23 = asin(-(((lado1^2)-(lado2^2)-(lado3^2)))/((2)*lado2*lado3));
-	cout<<"Angulo alfa: "<<ang23<<endl;
+	double s;
+	cout<<"Ingrese la medida del primer lado(a): "<<endl;
+	cin>>a;
+	cout<<"Ingrese la medida del segundo lado(b): "<<endl;
+	cin>>b;
+	cout<<"Ingrese la medida del tercer lado(c): "<<endl;
+	cin>>c;
 
-	ang13 = acos(((lado2^2)-(lado1^2)-(lado3^2))/((-2)*lado1*lado3));
-	cout<<"Angulo beta: "<<ang13<<endl;	
+	angA = acos((-(a*a)+(c*c)+(b*b))/(2*c*b));
+	angA = angA*180;
+	angA = angA/PI;
+	cout<<"Angulo A: "<<angA<<" grados"<<endl;
+	
+	angB = acos((-(b*b)+(a*a)+(c*c))/(2*a*c));
+	angB = angB*180;
+	angB = angB/PI;
+	cout<<"Angulo B: "<<angB<<" grados"<<endl;
+
+	angC = acos((-(c*c)+(a*a)+(b*b))/(2*a*b));
+	angC = angC*180;
+	angC = angC/PI;
+	cout<<"Angulo C: "<<angC<<" grados"<<endl;
+	
+	s = (a+b+c)/2;
+	area = sqrt(s*(s-a)*(s-b)*(s-c));
+	cout<<"El area del Triangulo es: "<<area<<endl;
 }
