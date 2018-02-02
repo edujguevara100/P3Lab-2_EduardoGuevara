@@ -15,6 +15,8 @@ int ranGen();
 int numTAnterior(int);
 //Calcula Area y angulos del Triangulo
 void Calculos();
+//Serie de Catalan
+void serieC();
 
 int main(){
 	int t = 0;
@@ -118,6 +120,10 @@ void Calculos() {
 	double angA;
 	double area;
 	double s;
+	double alturaA;
+	double alturaB;
+	double alturaC;
+
 	cout<<"Ingrese la medida del primer lado(a): "<<endl;
 	cin>>a;
 	cout<<"Ingrese la medida del segundo lado(b): "<<endl;
@@ -143,4 +149,23 @@ void Calculos() {
 	s = (a+b+c)/2;
 	area = sqrt(s*(s-a)*(s-b)*(s-c));
 	cout<<"El area del Triangulo es: "<<area<<endl;
+	if (angA == 90){
+		cout<<"Es triangulo Rectangulo"<<endl;
+	}else if(angB == 90){
+		cout<<"Es Triangulo Rectangulo"<<endl;
+	}else if(angC == 90){
+		cout<<"Es Triangulo Rectangulo"<<endl;
+	}else{
+		cout<<"No es Triangulo Rectangulo"<<endl;
+	}
+	alturaA = (2*area)/a;
+	alturaB = (2*area)/b;
+	alturaC = (2*area)/c;
+	cout<<"Altura a : "<<alturaA<<endl;
+	cout<<"Altura b : "<<alturaB<<endl;
+	cout<<"Altura c : "<<alturaC<<endl;
+}
+
+void serieC(){
+
 }
