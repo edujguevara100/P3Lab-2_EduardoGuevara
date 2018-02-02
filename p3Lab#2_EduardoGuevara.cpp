@@ -112,9 +112,9 @@ void Calculos() {
 	int lado1;
 	int lado2;
 	int lado3;
-	int ang12;
-	int ang13;
-	int ang23;
+	double ang12;
+	double ang13;
+	double ang23;
 	double area;
 	cout<<"Ingrese la medida del primer lado: "<<endl;
 	cin>>lado1;
@@ -122,5 +122,12 @@ void Calculos() {
 	cin>>lado2;
 	cout<<"Ingrese la medida del tercer lado: "<<endl;
 	cin>>lado3;
+	ang12 = acos(((lado3^2)-(lado1^2)-(lado2^2))/((-2)*lado1*lado3));
+	cout<<"Angulo gangma: "<<ang12<<endl;
 	
+	ang23 = asin(-(((lado1^2)-(lado2^2)-(lado3^2)))/((2)*lado2*lado3));
+	cout<<"Angulo alfa: "<<ang23<<endl;
+
+	ang13 = acos(((lado2^2)-(lado1^2)-(lado3^2))/((-2)*lado1*lado3));
+	cout<<"Angulo beta: "<<ang13<<endl;	
 }
