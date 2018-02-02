@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 using namespace std;
 
 //Evalua si el numero ingresado por el usuario es triangular o no
@@ -10,7 +11,9 @@ int menu();
 //Generador del random
 int ranGen();
 //Retorna el numero Triangular anterior al numero ingresado
-int numTanterior(int);
+int numTAnterior(int);
+//Calcula Area y angulos del Triangulo
+void Calculos();
 
 int main(){
 	int t = 0;
@@ -32,17 +35,24 @@ int main(){
 				int random;
 			       	random = ranGen();
 				bool rantriang;
-			      	rantirang = numTriangular(random);
+			      	rantriang = numTriangular(random);
 				cout<<random<<endl;
-				if (estriang) {
+				if (rantriang) {
 					cout<<"El numero aleatorio es Triangular"<<endl;
 				}else{
 					cout<<"El numero aleatorio no es Triangular"<<endl;
 				}
 				break;
 			case 3:
+				int numero;
+				cout<<"Ingrese un numero para obtener el triangular anterior a ese"<<endl;
+				cin>>numero;
+				int Triangularant;
+				Triangularant = numTAnterior(numero);
+				cout<<"El numero Triangular anterior(o igual) a "<<numero<<" es: "<<Triangularant<<endl;
 				break;
 			case 4:
+				Calculos();
 				break;
 			case 5:
 				break;
@@ -54,7 +64,7 @@ int main(){
 bool numTriangular(int t){
 	int acum = 0;
 	for (int i = 1; acum < t; i++){
-		if (acum<=t) {
+		if (acum < t) {
 			acum += i;
 		}
 	}
@@ -82,4 +92,35 @@ int ranGen(){
 	int aleatorio;
        	aleatorio = rand() % 5 + 1;
 	return aleatorio;
+}
+
+int numTAnterior(int t){
+	int acum = 0;
+	for (int i = 1; i < t; i++){
+		if (acum < t){
+			acum += i;
+			if ( acum > t ){
+				return acum -= i;
+			}else if(acum == t){
+				return acum;
+			}
+		}
+	}
+}
+
+void Calculos() {
+	int lado1;
+	int lado2;
+	int lado3;
+	int ang12;
+	int ang13;
+	int ang23;
+	double area;
+	cout<<"Ingrese la medida del primer lado: "<<endl;
+	cin>>lado1;
+	cout<<"Ingrese la medida del segundo lado: "<<endl;
+	cin>>lado2;
+	cout<<"Ingrese la medida del tercer lado: "<<endl;
+	cin>>lado3;
+	
 }
