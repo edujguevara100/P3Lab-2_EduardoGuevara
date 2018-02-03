@@ -60,6 +60,7 @@ int main(){
 				Calculos();
 				break;
 			case 5:
+				serieC();
 				break;
 		}
 	}
@@ -178,5 +179,18 @@ double areaT(double a, double b, double c){
 }
 
 void serieC(){
-	
+	int conta = 1;
+	int esp = 3;
+	cout<<"Quede picado con el triangulo no lo pude resolver"<<endl;
+	for (int i = 0; i < 4; i++){
+		for (int b = 0; b<esp;b++){
+			cout<<" ";
+		}	
+		esp--;
+		for (int a = 0; a < conta; a++){
+			cout<<"*";
+			conta+=2;
+		}
+		cout<<endl;
+	}
 }
