@@ -13,10 +13,12 @@ int menu();
 int ranGen();
 //Retorna el numero Triangular anterior al numero ingresado
 int numTAnterior(int);
-//Calcula Area y angulos del Triangulo
+//Calcula Angulos del Triangulo
 void Calculos();
 //Serie de Catalan
 void serieC();
+//Calcula el area del tiangulo
+double areaT(double,double,double);
 
 int main(){
 	int t = 0;
@@ -146,9 +148,9 @@ void Calculos() {
 	angC = angC/PI;
 	cout<<"Angulo C: "<<angC<<" grados"<<endl;
 	
-	s = (a+b+c)/2;
-	area = sqrt(s*(s-a)*(s-b)*(s-c));
-	cout<<"El area del Triangulo es: "<<area<<endl;
+	//s = (a+b+c)/2;
+	//area = sqrt(s*(s-a)*(s-b)*(s-c));
+	cout<<"El area del Triangulo es: "<<areaT(a,b,c)<<endl;
 	if (angA == 90){
 		cout<<"Es triangulo Rectangulo"<<endl;
 	}else if(angB == 90){
@@ -161,11 +163,20 @@ void Calculos() {
 	alturaA = (2*area)/a;
 	alturaB = (2*area)/b;
 	alturaC = (2*area)/c;
+
 	cout<<"Altura a : "<<alturaA<<endl;
 	cout<<"Altura b : "<<alturaB<<endl;
 	cout<<"Altura c : "<<alturaC<<endl;
 }
 
-void serieC(){
+double areaT(double a, double b, double c){
+	double s;
+       	s = (a+b+c)/2;
+	double area;
+	area = sqrt(s*(s-a)*(s-b)*(s-c));
+	return area;
+}
 
+void serieC(){
+	
 }
