@@ -180,9 +180,13 @@ double areaT(double a, double b, double c){
 
 void serieC(){
 	int conta = 1;
-	int esp = 3;
 	cout<<"Quede picado con el triangulo no lo pude resolver"<<endl;
-	for (int i = 0; i < 4; i++){
+	cout<<"Ingrese un numero"<<endl;
+	int numero;
+	cin>>numero;
+	int esp;
+	esp = numero-1;
+	for (int i = 0; i < numero; i++){
 		for (int b = 0; b<esp;b++){
 			cout<<" ";
 		}	
