@@ -189,8 +189,8 @@ void serieC(){
 		esp--;
 		for (int a = 0; a < conta; a++){
 			cout<<"*";
-			conta+=2;
 		}
+		conta+=2;
 		cout<<endl;
 	}
 }
